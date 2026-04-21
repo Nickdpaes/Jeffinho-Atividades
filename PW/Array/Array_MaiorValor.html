@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Array maior valor</title>
+</head>
+<body>
+  <h2>Exercício 1: Maior Valor</h2>
+
+  <!-- Botão para ver o maior valor. -->
+  <button onclick="executar()">Encontrar Maior Valor</button>
+
+  <!-- Exibi o resultado -->
+  <p id="resultado"></p>
+
+<script>
+// Função para o receber os valores
+function maiorvalor(num) {
+  let maior = num[0];
+  let posicao = 0;
+
+// Laço for para verificar o maior numero
+  for (let i = 0; i < num.length; i++) {
+    if (num[i]>maior) {
+      maior = num[i];
+      posicao = i;
+    }
+  }
+// Retorna o maior numero e sua posicao
+  return {
+    maior: maior,
+    posicao: posicao
+  };
+}
+// Função para ver o maior valor e sua posicao
+  function executar() { 
+  let num = [17, 83, 4, 59, 92, 31, 76, 8, 65, 48];
+  let resultado = maiorvalor(num);
+
+  // Mostra o resultado do maior valor e sua posicao na pagina
+  document.getElementById("resultado").innerHTML = "maior = " + resultado.maior + ", posição = " + resultado.posicao;
+}
+</script>
+</body>
+</html>
